@@ -5,27 +5,28 @@ name: PR review app
 # Middleman build into a subdirectory of the existing gh-pages branch.
 # Cleanup happens automatically on pull_request `closed` events.
 
-on:
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - closed
-    paths:
-      - 'source/**'
-      - 'data/**'
-      - 'lib/**'
-      - 'helpers/**'
-      - 'config.rb'
-      - 'Gemfile'
-      - 'Gemfile.lock'
-      - 'package.json'
-      - 'package-lock.json'
-      - 'Rakefile'
-      - 'Gemfile.lock'
-      - 'package-lock.json'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     types:
+#       - opened
+#       - reopened
+#       - synchronize
+#       - closed
+#     paths:
+#       - 'source/**'
+#       - 'data/**'
+#       - 'lib/**'
+#       - 'helpers/**'
+#       - 'config.rb'
+#       - 'Gemfile'
+#       - 'Gemfile.lock'
+#       - 'package.json'
+#       - 'package-lock.json'
+#       - 'Rakefile'
+#       - 'Gemfile.lock'
+#       - 'package-lock.json'
+# 
 concurrency:
   group: pr-preview-${{ github.ref }}
   cancel-in-progress: true
